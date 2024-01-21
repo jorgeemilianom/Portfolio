@@ -1,0 +1,13 @@
+---
+import './index.scss';
+interface Props {
+	title: string;
+    href: string;
+}
+
+const { title, href= '' } = Astro.props;
+---
+<a href={href} target="_blank" class="p-2 flex flex-content-center cardlink">
+    <div class="cardlink-icon"><slot /></div>
+    <div class="cardlink-title">{title}</div>
+</a>

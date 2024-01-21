@@ -1,0 +1,53 @@
+---
+import "./index.scss";
+import CardLink from "./Cards.astro";
+import Instagram from "./Icons/Instagram.astro";
+import Tiktok from "./Icons/Tiktok.astro";
+import CardSocial from "./CardSocial.astro";
+import Whatsapp from "./Icons/Whatsapp.astro";
+import Cv from "./Icons/Cv.astro";
+import Linkedin from "./Icons/Linkedin.astro";
+
+const link = {
+	instagram: "https://www.instagram.com/jorgeemilianom/",
+	tiktok: "https://www.tiktok.com/@jorgeemilianom",
+};
+---
+
+<main class="flex flex-column flex-items-center text-center gap-2">
+	<div class="logo"></div>
+	<h1>Jorge | Software Developer</h1>
+	<h2>Desarrollo ideas y doy soluciones mediante código.</h2>
+	<CardLink
+		title="Mi emprendimiento de StartUp Tecnológica"
+		href="https://gesprender.com"
+	/>
+
+	<CardSocial
+		title="Linkedin"
+		href="https://www.linkedin.com/in/jorgeemilianom/"
+	>
+		<Linkedin />
+	</CardSocial>
+
+	<CardSocial title="Mi CV" href="/src/assets/documents/CV.pdf">
+		<Cv />
+	</CardSocial>
+
+	<CardSocial
+		title="Contrata mis servicios"
+		href="https://wa.me/5493424416404"
+	>
+		<Whatsapp />
+	</CardSocial>
+
+	<div class="flex flex-column social">
+		<a href={link.instagram} target="_blank" class="bton">
+			<Instagram />
+		</a>
+		<a href={link.tiktok} target="_blank" class="bton">
+			<Tiktok />
+		</a>
+	</div>
+	<div class="text-bottom">GesPrender <br /><span>.com</span></div>
+</main>

@@ -1,0 +1,18 @@
+@import 'envs';
+@import 'lib';
+
+body{
+    opacity: 0;
+    animation: loadPaage 0.3s ease forwards;
+}
+
+
+@keyframes loadPaage {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}

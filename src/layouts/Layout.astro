@@ -1,0 +1,66 @@
+---
+import Nav from "./Nav.astro";
+import Footer from "./Footer.astro";
+interface Props {
+	title: string;
+	cancelNav: boolean;
+}
+
+const { title, cancelNav = true } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<link rel="icon" href="/src/assets/img/favicon.png" />
+
+		<meta name="keywords" content="Jorge Emiliano Maldonado, Software Developer, Development Coach, Programación Profesional, Consultoría de Software, Coaching Tecnológico, Mentoría en Desarrollo, Soluciones de Software a Medida, Liderazgo Técnico, Innovación en Programación">
+    	<meta name="description" content="Jorge Emiliano Maldonado: Software Developer y Coach de Desarrollo Profesional. Con una pasión por la tecnología y un compromiso con la excelencia, ofrezco una perspectiva única en la programación y el liderazgo técnico. Descubre servicios de consultoría personalizados, tutoría y soluciones de software a medida que impulsen tu carrera o negocio al próximo nivel.">
+		<meta name="author" content="Jorge Emiliano Maldonado">
+		<link rel="canonical" href="https://gesprender.com" />
+		<meta name="email" content="jorgeemilianom@gmail.com">
+    
+		<meta property="og:title" content="Jorge | Coach, Software Developer">
+   	 	<meta property="og:description" content="Jorge Emiliano Maldonado: Software Developer y Coach de Desarrollo Profesional. Con una pasión por la tecnología y un compromiso con la excelencia, ofrezco una perspectiva única en la programación y el liderazgo técnico. Descubre servicios de consultoría personalizados, tutoría y soluciones de software a medida que impulsen tu carrera o negocio al próximo nivel.">
+   		<meta property="og:url" content="https://gesprender.com">
+
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{title}</title>
+	</head>
+	<body>
+		{!cancelNav && <Nav />}
+		<slot />
+		<Footer />
+	</body>
+</html>
+<style is:global>
+	
+	:root {
+		--accent: 136, 58, 234;
+		--accent-light: 224, 204, 250;
+		--accent-dark: 49, 10, 101;
+		--accent-gradient: linear-gradient(
+			45deg,
+			rgb(var(--accent)),
+			rgb(var(--accent-light)) 30%,
+			white 60%
+		);
+	}
+	html {
+		font-family: system-ui, sans-serif;
+		background-size: 224px;
+	}
+	code {
+		font-family:
+			Menlo,
+			Monaco,
+			Lucida Console,
+			Liberation Mono,
+			DejaVu Sans Mono,
+			Bitstream Vera Sans Mono,
+			Courier New,
+			monospace;
+	}
+</style>
