@@ -11,9 +11,17 @@
   },
   "dependencies": {
     "@astrojs/check": "^0.4.1",
+    "@astrojs/react": "^2.2.1",
+    "@types/react": "^18.2.8",
+    "@types/react-dom": "^18.2.4",
     "astro": "^4.1.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
     "sass": "^1.69.7",
-    "typescript": "^5.3.3"
+    "sweetalert2": "^11.6.16",
+    "typescript": "^5.3.3",
+    "uuid": "^9.0.1",
+    "zustand": "^4.4.6"
   },
   "devDependencies": {
     "@astrojs/rss": "4.0.1",

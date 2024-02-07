@@ -1,0 +1,6 @@
+@mixin logo($size) {
+    background: url('/src/assets/img/logo.webp') center/cover;
+    width: $size;
+    height: $size;
+    border-radius: 50%;
+}

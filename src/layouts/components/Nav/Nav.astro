@@ -1,0 +1,35 @@
+---
+import './nav.scss'
+import OpenMenu from '../Icons/OpenMenu.astro';
+import CloseMenu from '../Icons/CloseMenu.astro';
+---
+
+<header>
+    <div class="nav-container">
+        <nav class="flex flex-bt flex-content-center">
+            
+            <div class="logo-navbar"> Hola! </div>
+    
+            <ul class="nav-items nav-items--side" id="nav-items">
+                
+                <div class="btn-close" id="btn-close">
+                    <CloseMenu />
+                </div>
+
+                <li class="nav-item nav-item-icon">NV</li>
+                <li class="nav-item"> <a href="/">Inicio</a> </li>
+                <li class="nav-item"> <a href="/about">Sobre mi</a> </li>
+                <!--               
+                <li>Servicios</li>
+                <li>Contacto</li> 
+                -->
+            </ul>
+
+            <div class="btn-open flex flex-bt" id="btn-open"> 
+                <OpenMenu />
+            </div>
+        </nav>
+    </div>
+</header>
+
+<script src="./nav.js"></script>

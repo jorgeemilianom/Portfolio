@@ -1,6 +1,11 @@
 ---
-import Nav from "./Nav.astro";
-import Footer from "./Footer.astro";
+import "../layouts/layout.scss";
+import "../components/index/index.scss";
+import Nav from "./components/Nav/Nav.astro";
+import "./components/Nav/nav.scss";
+import Footer from "./components/Footer/Footer.astro";
+import "./components/Footer/footer.scss";
+
 interface Props {
 	title: string;
 	cancelNav: boolean;
@@ -33,34 +38,10 @@ const { title, cancelNav = true } = Astro.props;
 		{!cancelNav && <Nav />}
 		<slot />
 		<Footer />
+		<script
+			src="https://code.jquery.com/jquery-3.7.1.js"
+			integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+			crossorigin="anonymous"></script>
 	</body>
 </html>
-<style is:global>
-	
-	:root {
-		--accent: 136, 58, 234;
-		--accent-light: 224, 204, 250;
-		--accent-dark: 49, 10, 101;
-		--accent-gradient: linear-gradient(
-			45deg,
-			rgb(var(--accent)),
-			rgb(var(--accent-light)) 30%,
-			white 60%
-		);
-	}
-	html {
-		font-family: system-ui, sans-serif;
-		background-size: 224px;
-	}
-	code {
-		font-family:
-			Menlo,
-			Monaco,
-			Lucida Console,
-			Liberation Mono,
-			DejaVu Sans Mono,
-			Bitstream Vera Sans Mono,
-			Courier New,
-			monospace;
-	}
-</style>
+

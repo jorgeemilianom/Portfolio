@@ -1,0 +1,149 @@
+@import '../../../assets/envs';
+@import '../../../assets/lib';
+
+.nav-container {
+    background-color: $neutral-200;
+    border-radius: 5px;
+    padding: 0.9em;
+    margin: 0.5em;
+    
+    nav {
+        .logo-navbar {
+            font-size: 20px;
+            font-weight: 600;
+            color: $neutral-800;
+            cursor: pointer;
+        
+            padding-left: 0.2em;
+            border-left: 4px solid $violet-800;
+        }
+        
+        .nav-item {
+            font-size: 18px;
+            font-weight: 300;
+            cursor: pointer;
+            display: inline-block;
+            position: relative;
+            
+            a {
+                text-decoration: none;
+                color: $neutral-800;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    
+    .nav-container {
+        nav {
+            .nav-items--side {
+                margin: 0;
+                padding: 2.5em 0 0 0;
+            
+                width: 50%;
+                height: 100%;
+                
+                position: fixed;
+                right: 0;
+                top: 0;
+            
+                display: flex;
+                flex-direction: column;
+                justify-content: start;
+        
+                background-color: $violet-800;
+                color: $neutral-800;
+                opacity: 0.95;
+
+                z-index: 9;
+        
+                .btn-close {
+                    position: absolute;
+                    top: 0px;
+                    right: 0px;
+                    padding: 1.5em;
+                }
+            
+                .nav-item {
+                    padding: 1em;
+                    margin-left: 0.5em;
+                    font-weight: 300;
+                }
+            
+                .nav-item-icon {
+                    color: $neutral-800;
+                    padding: 0 0.2em;
+                    margin: 1em;
+                    font-size: 24px;
+                    font-weight: 600;
+                    border-left: 4px solid $neutral-200;
+                }
+            
+                right: -50%;
+                transition: all linear .3s;
+            }
+        
+            .active {
+                right: 0px;
+            }
+
+            .nav-item {
+                a {
+                    color: $neutral-200;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 769px) {
+    .nav-container {
+        padding: 0 10px;
+
+        .btn-open {
+            display: none;
+        }
+    
+        
+        .nav-items {
+            display: block;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            
+            .btn-close {
+                display: none;
+            }
+    
+            .nav-item-icon {
+                display: none;
+            }
+
+            .nav-item {
+                font-size: 16px;
+                margin-right: 2em;
+
+                &::after{
+                    content: '';
+                    position: absolute;
+                    width: 100%;
+                    height: 2px;
+                    bottom: -2px;
+                    left: 0;
+                    background-color: $main-green;
+                    transform: scaleX(0);
+                    transform-origin: bottom right;
+                    transition: all ease-in-out .4s;
+                }
+            
+                &:hover{
+                    &::after{
+                        transform: scaleX(1);
+                        transform-origin: bottom left;
+                    }
+                }
+            }
+        }
+    }
+}

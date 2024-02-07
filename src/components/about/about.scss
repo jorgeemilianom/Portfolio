@@ -1,0 +1,60 @@
+@import '../../assets/envs';
+@import '../../assets/mixins';
+
+body {
+    background-color: $green-200;
+}
+
+main {
+    width: 100%;
+}
+
+.section-about-me {
+    text-align: center;
+
+    h1 {
+        color: $neutral-100;
+        font-size: 30px;
+        border-radius: 25px;
+    }
+
+    p {
+        padding: 0 2em;
+        font-size: 20px;
+        font-weight: 300;
+    }
+}
+
+.section-logo-about {
+    position: relative;
+    
+    .logo-about {
+        @include logo(300px);
+        margin: 0 0 2.5em 0;
+    }
+
+    .name-about {
+        position: absolute;
+        bottom: 0;
+        
+        font-size: 20px;
+        font-weight: 300;
+        
+        margin: 1em 0;
+        padding: 0.8em 1.2em;
+        background-color: $green-100;
+        border-radius: 25px;
+    }
+}
+
+.section-info-about {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    .info-icon {
+        padding: 1em;
+        border: 10px solid $neutral-100;
+        border-radius: 50%;
+    }
+}

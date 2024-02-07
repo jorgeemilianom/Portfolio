@@ -1,0 +1,38 @@
+---
+import './sectionLayout.scss';
+import Nav from './components/Nav/Nav.astro';
+import './components/Nav/nav.scss'
+import Footer from './components/Footer/Footer.astro';
+import './components/Footer/footer.scss'
+
+const { description, title, sectionTitle, keywords } = Astro.props; 
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content={description}>
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" href="/src/assets/img/favicon.png" />
+		<meta name="generator" content={Astro.generator} />
+		<meta name="keywords" content={keywords}>
+		<link rel="canonical" href="https://nutricionvegana.online" />
+		<meta property="og:title" content={title} />
+		<meta property="og:description" content="Explora el emocionante mundo de la nutrición vegana con nuestras guías expertas. Recetas saludables, consejos sobre suplementos y las últimas investigaciones." />
+		<meta property="og:url" content="https://nutricionvegana.online">
+		<title>{title}</title>
+	</head>
+	<body>   
+		<div class="header-section flex flex-column">
+			<Nav />
+			<div class="section-title flex flex-column flex-content-center flex-center">
+				<h1>{sectionTitle}</h1>
+			</div>
+		</div>
+	
+		<slot />
+
+		<Footer />
+	</body>
+</html>

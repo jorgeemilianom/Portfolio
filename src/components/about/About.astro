@@ -1,0 +1,51 @@
+---
+import "./about.scss";
+import TradeMark from "../icons/TradeMark.astro";
+import Studies from "../icons/Studies.astro";
+import Certificate from "../icons/Certificate.astro";
+---
+
+<main>
+	<div class="body-section-about flex flex-column gap-5">
+
+		<div class="section-about-me flex flex-column flex-center gap-2 p-2">
+			<h1>Mi nombre es -Name-, <br /> soy especialista en -Profesión-</h1>
+
+			<p>
+				Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem
+				nostrum voluptas quaerat consequatur quam ut eos consectetur
+				tenetur repudiandae odio amet, maiores dolores illo sapiente id
+				ratione? Vitae, atque dignissimos? Lorem ipsum dolor sit amet
+				consectetur adipisicing elit. Vel nobis perspiciatis suscipit
+				fugit fugiat voluptates facilis ex, mollitia excepturi a nisi
+				itaque repudiandae beatae. Similique, tempora! Nostrum ab nemo
+				tenetur!
+			</p>
+		</div>
+
+		<div class="section-logo-about flex flex-column flex-center flex-content-center p-2">
+			<div class="logo-about"></div>
+			<div class="name-about">Firstname Lastname</div>
+		</div>
+
+		<div class="section-info-about flex flex-row flex-center gap-5 p-2">
+			<article class="info-card">
+				<div class="info-icon">
+					<Certificate />
+				</div>
+			</article>
+
+			<article class="info-card">
+				<div class="info-icon">
+					<TradeMark />
+				</div>
+			</article>
+
+			<article class="info-card">
+				<div class="info-icon">
+					<Studies />
+				</div>
+			</article>
+		</div>
+	</div>
+</main>
