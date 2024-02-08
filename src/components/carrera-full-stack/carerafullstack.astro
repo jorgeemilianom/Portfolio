@@ -1,0 +1,57 @@
+---
+import "./carerafullstack.scss";
+import { cursosFrontend } from "./cursos.js";
+---
+
+<main class="cfs flex flex-column gap-2">
+    <section class="cfs-head">
+        <h1>Carrera de FrontEnd Developer</h1>
+        <ul>
+            <p>Front End</p>
+            <li><a href="#">Nivel 1: Fundamentos del Desarrollo Web</a></li>
+            <li>
+                <a href="#"
+                    >Nivel 2: Herramientas de Desarrollo y Control de Versiones</a
+                >
+            </li>
+            <li><a href="#">Nivel 3: Frameworks y Librerías</a></li>
+            <li><a href="#">Nivel 4: Responsive Design y Accesibilidad</a></li>
+            <li>
+                <a href="#">Nivel 5: Herramientas Modernas de Desarrollo</a>
+            </li>
+            <li><a href="#">Nivel 6: Proyectos Prácticos</a></li>
+        </ul>
+    </section>
+    <section class="cfs-content">
+        <div class="cfs-content-title">Front End</div>
+        {
+            cursosFrontend.map((curse_level) => {
+                return (
+                    <div class="cfs-curse">
+                        <div class="cfs-curse-subtitle">
+                            {curse_level.level}
+                        </div>
+                        {curse_level.data.map((curse) => {
+                            return (
+                                <article class="mt-2">
+                                    <div class="cfs-curse-description">
+                                        {" "}
+                                        <b>{curse.title}</b> {curse.description}{" "}
+                                    </div>
+                                    {curse.curse.map((option) => {
+                                        return (
+                                            <div class="cfs-curse-video">
+                                                <img src={option.url_icon} width="20px" height="20px" alt="" />
+                                                <a href={option.link} class="cfs-curse-video-title" > {option.name} </a>
+                                            </div>
+                                        );
+                                    })}
+                                </article>
+                            );
+                        })}
+                    </div>
+                );
+            })
+        }
+    </section>
+</main>
