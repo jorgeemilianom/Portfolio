@@ -38,16 +38,19 @@ const link = {
 
 <script>
 	interface ApiResponse {
-		message: string;
-		data: Link[];
-		status: boolean;
-	}
+        message: string;
+        data: {
+            Links: LinkData[]; // Asumiendo que `Links` es un array de `LinkData` como se esperaba originalmente.
+            socialNetwork: { [key: string]: LinkData }; // Corrige para manejar el objeto socialNetwork correctamente.
+        };
+        status: boolean;
+    }
 
-	interface Link {
-		id: number;
-		title: string;
-		link: string;
-	}
+    interface LinkData {
+        id: number;
+        title: string;
+        link: string;
+    }
 	const protocole:string = globalThis.location.hostname == 'localhost' ? 'http' : 'https';
 	fetch(`${protocole}://${globalThis.location.hostname}/api/index.php?link-getall=1`, { method: "GET" })
 		.then((response) => response.json())
@@ -55,7 +58,7 @@ const link = {
 			if(!objetResponse?.status) return;
 
 			let links_container:string = "";
-			objetResponse?.data.map((element: Link) => {
+			objetResponse?.data?.Links.map((element: LinkData) => {
 				let component:string = `
             <a href="${element?.link}" target="_blank" class="p-2 flex flex-content-center cardlink">
                 <div class="cardlink-icon" >

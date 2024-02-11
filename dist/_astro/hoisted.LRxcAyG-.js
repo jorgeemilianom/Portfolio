@@ -1,4 +1,4 @@
-import"./hoisted.mpKlTeMq.js";const i=globalThis.location.hostname=="localhost"?"http":"https";fetch(`${i}://${globalThis.location.hostname}/api/index.php?link-getall=1`,{method:"GET"}).then(t=>t.json()).then(t=>{if(!t?.status)return;let l="";t?.data.map(n=>{let e=`
+import"./hoisted.mpKlTeMq.js";const i=globalThis.location.hostname=="localhost"?"http":"https";fetch(`${i}://${globalThis.location.hostname}/api/index.php?link-getall=1`,{method:"GET"}).then(t=>t.json()).then(t=>{if(!t?.status)return;let l="";t?.data?.Links.map(n=>{let e=`
             <a href="${n?.link}" target="_blank" class="p-2 flex flex-content-center cardlink">
                 <div class="cardlink-icon" >
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
