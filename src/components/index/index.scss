@@ -39,7 +39,7 @@ main {
 
     #links-container {
         width: -webkit-fill-available;
-        
+
         .cardlink {
             border: $neutral-400-50 solid 1px;
             border-radius: 5px;
@@ -62,8 +62,10 @@ main {
             }
 
             &-title {
-                text-align: center;
                 width: 100%;
+                font-weight: 600;
+                font-size: 15px;
+                text-align: left;
             }
 
         }
