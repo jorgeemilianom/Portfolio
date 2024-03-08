@@ -8,18 +8,18 @@ import "./components/Footer/footer.scss";
 
 interface Props {
 	title: string;
+	titleNav: string;
 	cancelNav: boolean;
 }
 
-const { title, cancelNav = true } = Astro.props;
+const { title, cancelNav = true, titleNav='Hola!' } = Astro.props;
 ---
 
 <!doctype html>
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />
-		<link rel="icon" href="/src/assets/img/favicon.png" />
-
+		<link rel="shortcut icon" href="/src/assets/img/favicon.png" type="image/x-icon">
 		<meta name="keywords" content="Jorge Emiliano Maldonado, Software Developer, Development Coach, Programación Profesional, Consultoría de Software, Coaching Tecnológico, Mentoría en Desarrollo, Soluciones de Software a Medida, Liderazgo Técnico, Innovación en Programación">
     	<meta name="description" content="Jorge Emiliano Maldonado: Software Developer y Coach de Desarrollo Profesional. Con una pasión por la tecnología y un compromiso con la excelencia, ofrezco una perspectiva única en la programación y el liderazgo técnico. Descubre servicios de consultoría personalizados, tutoría y soluciones de software a medida que impulsen tu carrera o negocio al próximo nivel.">
 		<meta name="author" content="Jorge Emiliano Maldonado">
@@ -35,7 +35,7 @@ const { title, cancelNav = true } = Astro.props;
 		<title>{title}</title>
 	</head>
 	<body>
-		{!cancelNav && <Nav />}
+		{!cancelNav && <Nav titleNav={titleNav} />}
 		<slot />
 		<Footer />
 		<script

@@ -52,9 +52,8 @@
                 flex-direction: column;
                 justify-content: start;
         
-                background-color: $violet-800;
-                color: $neutral-800;
-                opacity: 0.95;
+                background-color: $neutral-800;
+                color: $neutral-400;
 
                 z-index: 9;
         
@@ -72,10 +71,10 @@
                 }
             
                 .nav-item-icon {
-                    color: $neutral-800;
+                    color: $neutral-400;
                     padding: 0 0.2em;
                     margin: 1em;
-                    font-size: 24px;
+                    font-size: 12px;
                     font-weight: 600;
                     border-left: 4px solid $neutral-200;
                 }

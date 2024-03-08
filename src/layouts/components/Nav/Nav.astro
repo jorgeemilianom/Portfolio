@@ -2,13 +2,15 @@
 import './nav.scss'
 import OpenMenu from '../Icons/OpenMenu.astro';
 import CloseMenu from '../Icons/CloseMenu.astro';
+
+const { titleNav='Hola!' } = Astro.props;
 ---
 
 <header>
     <div class="nav-container">
         <nav class="flex flex-bt flex-content-center">
             
-            <div class="logo-navbar"> Hola! </div>
+            <div class="logo-navbar"> {titleNav} </div>
     
             <ul class="nav-items nav-items--side" id="nav-items">
                 
@@ -16,9 +18,9 @@ import CloseMenu from '../Icons/CloseMenu.astro';
                     <CloseMenu />
                 </div>
 
-                <li class="nav-item nav-item-icon">NV</li>
+                <li class="nav-item nav-item-icon">GesPrender.com</li>
                 <li class="nav-item"> <a href="/">Inicio</a> </li>
-                <li class="nav-item"> <a href="/about">Sobre mi</a> </li>
+                <li class="nav-item"> <a href="/carrera-full-stack">Carrera FullStack</a> </li>
                 <!--               
                 <li>Servicios</li>
                 <li>Contacto</li> 
